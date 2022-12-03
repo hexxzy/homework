@@ -7,9 +7,9 @@ class Queue:
         self.inside.pop(other)
         return self
     def __str__(self):
-        return " <= ".join(self.inside)   # в другую сторону не очень правильно
+        return " <= ".join(self.inside)
     def add(self):
-        name = input("введите имя: ")     # или название животного в данном случае
+        name = input("введите имя: ")
         self.inside.append(name)
     def take_out(self):
         self.inside.pop(0)

@@ -2,7 +2,7 @@ class Batary():
     def __init__(self):
         self.capacity = []
         self.max_charge = 5
-        self.min_charge = 0
+
 
     def __str__(self):
         return '[' + ''.join(self.capacity) +']'
