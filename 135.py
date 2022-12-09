@@ -1,20 +1,22 @@
-import tkinter as tk
+from tkinter import *
 
-def createNewWindow():
-    file = open("Numbers.txt", "w")
-    file.write("123")
-    file.close()
-    name = open("Numbers.txt", "r")
-    list = name.read
-    newWindow = tk.Toplevel(app)
-    MessageExample = tk.Message(newWindow, text = f"\n{list}")
+def changeColor():
+  color_selection = color.get()
+  window.configure(background = color_selection)
 
-    MessageExample.pack()
+window = Tk()
+window.title("Colors")
+window.geometry("200x200")
 
-app = tk.Tk()
-buttonExample = tk.Button(app,
-              text="Create new window",
-              command=createNewWindow)
-buttonExample.pack()
+color = StringVar(window)
+color.set("Red")
+color_menu = OptionMenu(window, color, "Red", "Green", "Blue")
+color_menu.place(x= 50, y = 100)
 
-app.mainloop()
+btn = Button(text="Change color", command=changeColor)
+btn.place(x = 50, y = 150)
+
+window.mainloop()
+
+
+
